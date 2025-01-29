@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="admin.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+	<title>AdminHub</title>
+
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">AdminHub</span>
+		</a>
+		<ul class="side-menu top">
+			<li class="active">
+				<a href="#">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx ri-road-map-fill' ></i>
+					<span class="text">Bus Routes</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Analytics</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">Message</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="profile">
+				<img src="img/people.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Dashboard</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+				<a href="#" class="btn-download" id="downloadPdf">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">Download PDF</span>
+				</a>
+			</div>
+
+			<ul class="box-info">
+				<li>
+					<i class="bx ri-bus-line"></i>
+					<span class="text">
+						<h3>Bus</h3>
+						<div class="dropdown_bus">
+                            <button class="dropdown_bus-toggle">Menu</button>
+                            <ul class="dropdown_bus-menu">
+                              <li><a href="#">Bus-1</a></li>
+                              <li><a href="#">Bus-2</a></li>
+                            </ul>
+                          </div>
+					</span>
+                    <div class="signs">
+						<button id="openPopup" style="border:0;margin: 0;background-color: white;">
+							<i class="ri-add-circle-line" style="font-size: 32px;color: green;"></i>
+						</button>
+						<div id="popupModal" class="modal">
+							<div class="modal-content">
+							  <span class="close">&times;</span>
+							  <h2>Enter Text</h2>
+							  <input type="text" id="textInput" placeholder="Bus Name">
+							  <button class="dropdown_bus-toggle" id="submitText">Submit</button>
+							</div>
+						</div>
+						<div class="dropdown">
+							<button id="dropdownButton" style="border:0;margin: 0;width: 20px;background-color: white;">
+								<i class='ri-subtract-line' style="margin-right: 20px;font-size: 32px;color: red;"></i>
+							</button>
+							<ul id="dropdownMenu">
+							  <li>Bus 1 <button class="removeButton">Remove</button></li>
+							  <li>Bus 2 <button class="removeButton">Remove</button></li>
+							</ul>
+						</div>
+                    </div>
+
+				</li>
+				<li>
+					<i class="bx ri-swap-fill"></i>
+					<div class="content">
+						<div class="item">
+							<span class="text">
+								<h3>Routes</h3>
+							</span>
+							<div class="signs">
+								<button id="openPopup" style="border:0;margin: 0;background-color: white;">
+									<i class="ri-add-circle-line" style="font-size: 32px;color: green;"></i>
+								</button>
+								<div id="popupModal" class="modal">
+									<div class="modal-content">
+									<span class="close">&times;</span>
+									<h2>Enter Text</h2>
+									<input type="text" id="textInput" placeholder="Route Name">
+									<button class="dropdown-toggle" id="submitText">Submit</button>
+									</div>
+								</div>
+								<button id="openPopup" style="border:0;margin: 0;background-color: white;">
+									<i class='ri-subtract-line' style="font-size: 32px;color: red;"></i>
+								</button>
+							</div>
+						</div>
+						<div class="item">
+							<span class="text">
+								<h3>Time</h3>
+							</span>
+							<div class="signs">
+								<button id="openPopup" style="border:0;margin: 0;background-color: white;">
+									<i class="ri-add-circle-line" style="font-size: 32px;color: green;"></i>
+								</button>
+								<div id="popupModal" class="modal">
+									<div class="modal-content">
+									<span class="close">&times;</span>
+									<h2>Enter Text</h2>
+									<input type="text" id="textInput" placeholder="Route Name">
+									<button class="dropdown-toggle" id="submitText">Submit</button>
+									</div>
+								</div>
+								<button id="openPopup" style="border:0;margin: 0;background-color: white;">
+									<i class='ri-subtract-line' style="font-size: 32px;color: red;"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				  </li>
+				<li>
+					<i class="bx bxs-group"></i>
+					<span class="text">
+						<h3>Passengers</h3>
+                        <div class="view_pass">
+                            <button class="pass_view_btn">View</button>
+                        </div>
+					</span>
+				</li>
+			</ul>
+
+
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Details</h3>
+					</div>
+				</div>
+			</div>
+		</main>
+	</section>
+	<script src="admin.js"></script>
+</body>
+</html>
