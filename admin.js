@@ -124,6 +124,66 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   document.addEventListener('DOMContentLoaded', function () {
+    const dropdownToggle = document.querySelector('.dropdown_route-toggle');
+    const dropdownMenu = document.querySelector('.dropdown_route-menu');
+  
+    // Toggle dropdown visibility
+    dropdownToggle.addEventListener('click', function () {
+      dropdownMenu.classList.toggle('show');
+    });
+  
+    // Update button text when an item is selected
+    dropdownMenu.addEventListener('click', function (event) {
+      if (event.target.tagName === 'A') {
+        // Get the text of the clicked link
+        const selectedItemText = event.target.textContent;
+        // Update the button text
+        dropdownToggle.textContent = selectedItemText;
+        // Hide the dropdown menu
+        dropdownMenu.classList.remove('show');
+      }
+    });
+  // Close the dropdown if the user clicks outside of it
+    window.addEventListener('click', function (event) {
+      if (!event.target.matches('.dropdown_route-toggle')) {
+        if (dropdownMenu.classList.contains('show')) {
+          dropdownMenu.classList.remove('show');
+        }
+      }
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const dropdownToggle = document.querySelector('.dropdown_time-toggle');
+    const dropdownMenu = document.querySelector('.dropdown_time-menu');
+  
+    // Toggle dropdown visibility
+    dropdownToggle.addEventListener('click', function () {
+      dropdownMenu.classList.toggle('show');
+    });
+  
+    // Update button text when an item is selected
+    dropdownMenu.addEventListener('click', function (event) {
+      if (event.target.tagName === 'A') {
+        // Get the text of the clicked link
+        const selectedItemText = event.target.textContent;
+        // Update the button text
+        dropdownToggle.textContent = selectedItemText;
+        // Hide the dropdown menu
+        dropdownMenu.classList.remove('show');
+      }
+    });
+  // Close the dropdown if the user clicks outside of it
+    window.addEventListener('click', function (event) {
+      if (!event.target.matches('.dropdown_time-toggle')) {
+        if (dropdownMenu.classList.contains('show')) {
+          dropdownMenu.classList.remove('show');
+        }
+      }
+    });
+  });
+  
+  document.addEventListener('DOMContentLoaded', function () {
     const openPopupButton = document.getElementById('openPopup');
     const popupModal = document.getElementById('popupModal');
     const closeButton = document.querySelector('.close');
@@ -160,28 +220,105 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  document.addEventListener('DOMContentLoaded', function () {
+    const openPopupButton = document.getElementById('openPopup2');
+    const popupModal = document.getElementById('popupModal2');
+    const closeButton = document.querySelector('.close');
+    const submitButton = document.getElementById('submitText2');
+    const textInput = document.getElementById('textInput2');
+  
+    // Open the popup
+    openPopupButton.addEventListener('click', function () {
+      popupModal.style.display = 'flex';
+    });
+  
+    // Close the popup
+    closeButton.addEventListener('click', function () {
+      popupModal.style.display = 'none';
+    });
+  
+    // Submit the text
+    submitButton.addEventListener('click', function () {
+      const text = textInput.value;
+      if (text) {
+        alert(`You entered: ${text}`);
+        popupModal.style.display = 'none';
+        textInput.value = ''; // Clear the input
+      } else {
+        alert('Please enter some text!');
+      }
+    });  
+    // Close the popup if clicked outside the modal
+    window.addEventListener('click', function (event) {
+      if (event.target === popupModal) {
+        popupModal.style.display = 'none';
+      }
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const openPopupButton = document.getElementById('openPopup3');
+    const popupModal = document.getElementById('popupModal3');
+    const closeButton = document.querySelector('.close');
+    const submitButton = document.getElementById('submitText3');
+    const textInput = document.getElementById('textInput3');
+  
+    // Open the popup
+    openPopupButton.addEventListener('click', function () {
+      popupModal.style.display = 'flex';
+    });
+  
+    // Close the popup
+    closeButton.addEventListener('click', function () {
+      popupModal.style.display = 'none';
+    });
+  
+    // Submit the text
+    submitButton.addEventListener('click', function () {
+      const text = textInput.value;
+      if (text) {
+        alert(`You entered: ${text}`);
+        popupModal.style.display = 'none';
+        textInput.value = ''; // Clear the input
+      } else {
+        alert('Please enter some text!');
+      }
+    });  
+    // Close the popup if clicked outside the modal
+    window.addEventListener('click', function (event) {
+      if (event.target === popupModal) {
+        popupModal.style.display = 'none';
+      }
+    });
+  });
+
 
 document.addEventListener('DOMContentLoaded', function () {
-    const dropdownButton = document.getElementById('dropdownButton');
-    const dropdownMenu = document.getElementById('dropdownMenu');
+    const dropdownButton = document.querySelector('.dropdownButton');
+    const dropdownMenu = document.querySelector('.dropdownMenu');
   
     // Toggle dropdown visibility
-    dropdownButton.addEventListener('click', function () {
-      dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    dropdownButton.addEventListener('click', function (event) {
+        event.stopPropagation();  // Prevent click from propagating to the window
+        const currentDisplay = dropdownMenu.style.display;
+        dropdownMenu.style.display = currentDisplay === 'block' ? 'none' : 'block';
     });
   
     // Remove entry when remove button is clicked
     dropdownMenu.addEventListener('click', function (event) {
-      if (event.target.classList.contains('removeButton')) {
-        const listItem = event.target.parentElement;
-        listItem.remove();
-      }
+        if (event.target.classList.contains('removeButton')) {
+            const listItem = event.target.parentElement;
+            listItem.remove();
+        }
     });
   
     // Close dropdown if clicked outside
     window.addEventListener('click', function (event) {
-      if (!event.target.matches('#dropdownButton')) {
-        dropdownMenu.style.display = 'none';
-      }
+        // Check if the click is outside the dropdown and button
+        if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+        }
     });
-  });
+});
+
+
