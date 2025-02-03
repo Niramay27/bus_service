@@ -232,10 +232,11 @@ body {
 	height: 100%;
 	border: none;
 	background: var(--grey);
+	color: var(--dark);
 	border-radius: 36px 0 0 36px;
 	outline: none;
 	width: 100%;
-	color: var(--dark);
+	
 }
 #content nav form .form-input button {
 	width: 36px;
@@ -360,7 +361,8 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #f9f9f9;
+	background: var(--white);
+	color: var(--dark);
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -375,31 +377,121 @@ body {
   
 .dropdown_bus-menu li a {
     text-decoration: none;
-    color: #333;
+    background: var(--white);
+	color: var(--dark);
     display: block;
   }
   
 .dropdown_bus-menu li:hover {
-    background-color: #ddd;
+    background: var(--white);
   }
   
 .dropdown_bus-menu.show {
     display: block;
 }
 
-.pass_view_btn {
+.dropdown_route-toggle {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 12px;
     border-radius: 5px;
   }
+  
+.dropdown_route-toggle:hover {
+    background-color: #45a049;
+  }
+  
+.dropdown_route-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+	background: var(--white);
+	color: var(--dark);
+    min-width: 250px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+.dropdown_route-menu li {
+    padding: 10px;
+  }
+  
+.dropdown_route-menu li a {
+    text-decoration: none;
+    background: var(--white);
+	color: var(--dark);
+    display: block;
+  }
+  
+.dropdown_route-menu li:hover {
+    background: var(--white);
+  }
+  
+.dropdown_route-menu.show {
+    display: block;
+}
+
+.dropdown_time-toggle {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 5px;
+  }
+  
+.dropdown_time-toggle:hover {
+    background-color: #45a049;
+  }
+  
+.dropdown_time-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+	background: var(--white);
+	color: var(--dark);
+    min-width: 250px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+.dropdown_time-menu li {
+    padding: 10px;
+  }
+  
+.dropdown_time-menu li a {
+    text-decoration: none;
+    background: var(--white);
+	color: var(--dark);
+    display: block;
+  }
+  
+.dropdown_time-menu li:hover {
+    background: var(--white);
+  }
+  
+.dropdown_time-menu.show {
+    display: block;
+}
+
 
 .signs {
-    display: flex; /* Use Flexbox to align icons horizontally */
-    gap: 1vw; /* Space between icons */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2.5vw;
 }
 
 /* Modal Styling */
@@ -440,28 +532,21 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
   }
-
-
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  #dropdownButton {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+  .dropdownButton {
+    background: var(--white);
+	color: var(--dark);
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-  }
-  
-  #dropdownButton:hover {
-    background-color: #45a049;
-  }
-  
-  #dropdownMenu {
-    display: none;
+    display: inline-block;
+    font-size: 32px;  
+    color: red;
+	width: 2vw; height: 6vh;  
+	display: flex;
+	align-items: center;    
+}
+
+.dropdownMenu {
+    display: none;  /* Initially hidden */
     position: absolute;
     top: 100%;
     left: 0;
@@ -471,28 +556,62 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 200px;
-  }
-  
-  #dropdownMenu li {
+    width: 14vw;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Optional: Add shadow for better dropdown visibility */
+}
+
+.dropdownMenu li {
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .removeButton {
+}
+
+.removeButton {
     background-color: #ff4d4d;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-  .removeButton:hover {
+}
+
+.removeButton:hover {
     background-color: #ff1a1a;
-  }
-  
+}
+
+#openPopup{
+	background: var(--white);
+	color: var(--dark);
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 32px;  
+	width: 2vw; height: 6vh;  
+	display: flex;
+	align-items: center; 
+}
+#openPopup2{
+	background: var(--white);
+	color: var(--dark);
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 32px;  
+	width: 2vw; height: 6vh;  
+	display: flex;
+	align-items: center; 
+}
+#openPopup3{
+	background: var(--white);
+	color: var(--dark);
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 32px;  
+	width: 2vw; height: 6vh;  
+	display: flex;
+	align-items: center; 
+}
 
 #content main .box-info {
 	display: grid;
@@ -537,7 +656,29 @@ body {
 #content main .box-info li .text p {
 	color: var(--dark);	
 }
-
+.bus_outer_div{
+	display: flex;
+	justify-content: center;
+	gap: 2vw;
+}
+.outer_div{
+	display: flex;
+    flex-direction: column; /* Distributes space evenly */
+    align-items:center ; /* Aligns items vertically */
+    gap: 2vw; /* Adds space between divs */
+}
+.route_box{
+	display: flex;
+    justify-content: space-between; /* Distributes space evenly */
+    align-items: center; 
+    gap: 2vw; /* Adds space between divs */
+}
+.time_box{
+	display: flex;
+    justify-content: center; /* Distributes space evenly */
+    align-items: center; 
+    gap: 2vw; /* Adds space between divs */
+}
 #content main .table-data {
 	display: flex;
 	flex-wrap: wrap;
@@ -619,15 +760,6 @@ body {
 
 /* MAIN */
 /* CONTENT */
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 768px) {
 	#sidebar {
 		width: 200px;
@@ -642,12 +774,6 @@ body {
 		display: none;
 	}
 }
-
-
-
-
-
-
 @media screen and (max-width: 576px) {
 	#content nav form .form-input input {
 		display: none;
