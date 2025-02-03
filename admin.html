@@ -109,97 +109,125 @@
 
 			<ul class="box-info">
 				<li>
-					<i class="bx ri-bus-line"></i>
-					<span class="text">
-						<h3>Bus</h3>
-						<div class="dropdown_bus">
-                            <button class="dropdown_bus-toggle">Menu</button>
-                            <ul class="dropdown_bus-menu">
-                              <li><a href="#">Bus-1</a></li>
-                              <li><a href="#">Bus-2</a></li>
-                            </ul>
-                          </div>
-					</span>
-                    <div class="signs">
-						<button id="openPopup" style="border:0;margin: 0;background-color: white;">
-							<i class="ri-add-circle-line" style="font-size: 32px;color: green;"></i>
-						</button>
-						<div id="popupModal" class="modal">
-							<div class="modal-content">
-							  <span class="close">&times;</span>
-							  <h2>Enter Text</h2>
-							  <input type="text" id="textInput" placeholder="Bus Name">
-							  <button class="dropdown_bus-toggle" id="submitText">Submit</button>
+					<div class="bus_outer_div">
+						<i class="bx ri-bus-line"></i>
+						<span class="text">
+							<h3>Bus</h3>
+							<div class="dropdown_bus">
+								<button class="dropdown_bus-toggle">Select</button>
+								<ul class="dropdown_bus-menu">
+								<li><a href="#">Bus-1</a></li>
+								<li><a href="#">Bus-2</a></li>
+								</ul>
+							</div>
+						</span>
+						<div class="signs">
+							<button id="openPopup">
+								<i class="ri-add-circle-line" style="font-size: 32px;color: green;"></i>
+							</button>
+							<div id="popupModal" class="modal">
+								<div class="modal-content">
+								<span class="close">&times;</span>
+								<h2>Enter Text</h2>
+								<input type="text" id="textInput" placeholder="Bus Name">
+								<button class="dropdown_bus-toggle" id="submitText">Submit</button>
+								</div>
+							</div>
+							<div class="dropdown">
+								<button class="dropdownButton">
+									<i class="ri-subtract-line" style="font-size: 32px;color: red;"></i>
+								</button>
+								<ul class="dropdownMenu">
+									<li>Bus 1 <button class="removeButton">Remove</button></li>
+									<li>Bus 2 <button class="removeButton">Remove</button></li>
+								</ul>
+							</div>
+							
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="outer_div">
+						<div class="route_box">
+							<i class="bx ri-swap-fill"></i>
+							<span class="text">
+								<h3>Route</h3>
+								<div class="dropdown_bus">
+									<button class="dropdown_route-toggle">Select</button>
+									<ul class="dropdown_route-menu">
+										<li><a href="#">IISER-B to Chirayu</a></li>
+										<li><a href="#">Chirayu to IISER-B</a></li>
+									</ul>
+								</div>
+							</span>
+							<div class="signs">
+								<button id="openPopup2">
+									<i class="ri-add-circle-line" style="font-size: 32px;color: green;"></i>
+							</button>
+							<div id="popupModal2" class="modal">
+								<div class="modal-content">
+								<span class="close">&times;</span>
+								<h2>Enter Text</h2>
+								<input type="text" id="textInput2" placeholder="Route to add">
+								<button class="dropdown_bus-toggle" id="submitText2">Submit</button>
+								</div>
+							</div>
+							<div class="dropdown">
+								<button class="dropdownButton">
+									<i class="ri-subtract-line" style="font-size: 32px;color: red;"></i>
+								</button>
+								<ul class="dropdownMenu">
+									<li>Bus 1<button class="removeButton">Remove</button></li>
+									<li>Bus 2<button class="removeButton">Remove</button></li>
+								</ul>
+							</div>
+						</div>
+					
+					</div>
+				  </li>
+				  <li>
+					<div class="time_box">
+						<i class="bx ri-time-fill"></i>
+						<span class="text">
+							<h3>Time</h3>
+							<div class="dropdown_bus">
+								<button class="dropdown_time-toggle">Select</button>
+								<ul class="dropdown_time-menu">
+									<li><a href="#">9:00 AM</a></li>
+									<li><a href="#">11:00 AM</a></li>
+									<li><a href="#">1:00 PM</a></li>
+									<li><a href="#">3:00 PM</a></li>
+									<li><a href="#">5:00 PM</a></li>
+									<li><a href="#">7:00 PM</a></li>
+									<li><a href="#">9:00 PM</a></li>
+		
+								</ul>
+							</div>
+						</span>
+						<div class="signs">
+							<button id="openPopup3">
+								<i class="ri-add-circle-line" style="font-size: 32px;color: green;"></i>
+							</button>
+							<div id="popupModal3" class="modal">
+								<div class="modal-content">
+								<span class="close">&times;</span>
+								<h2>Enter Text</h2>
+								<input type="text" id="textInput3" placeholder="Add time slot">
+								<button class="dropdown_bus-toggle" id="submitText3">Submit</button>
 							</div>
 						</div>
 						<div class="dropdown">
-							<button id="dropdownButton" style="border:0;margin: 0;width: 20px;background-color: white;">
-								<i class='ri-subtract-line' style="margin-right: 20px;font-size: 32px;color: red;"></i>
+							<button class="dropdownButton">
+								<i class="ri-subtract-line" style="font-size: 32px;color: red;"></i>
 							</button>
-							<ul id="dropdownMenu">
-							  <li>Bus 1 <button class="removeButton">Remove</button></li>
-							  <li>Bus 2 <button class="removeButton">Remove</button></li>
+							<ul class="dropdownMenu">
+								<li>Bus 1 <button class="removeButton">Remove</button></li>
+								<li>Bus 2 <button class="removeButton">Remove</button></li>
 							</ul>
-						</div>
-                    </div>
-
-				</li>
-				<li>
-					<i class="bx ri-swap-fill"></i>
-					<div class="content">
-						<div class="item">
-							<span class="text">
-								<h3>Routes</h3>
-							</span>
-							<div class="signs">
-								<button id="openPopup" style="border:0;margin: 0;background-color: white;">
-									<i class="ri-add-circle-line" style="font-size: 32px;color: green;"></i>
-								</button>
-								<div id="popupModal" class="modal">
-									<div class="modal-content">
-									<span class="close">&times;</span>
-									<h2>Enter Text</h2>
-									<input type="text" id="textInput" placeholder="Route Name">
-									<button class="dropdown-toggle" id="submitText">Submit</button>
-									</div>
-								</div>
-								<button id="openPopup" style="border:0;margin: 0;background-color: white;">
-									<i class='ri-subtract-line' style="font-size: 32px;color: red;"></i>
-								</button>
-							</div>
-						</div>
-						<div class="item">
-							<span class="text">
-								<h3>Time</h3>
-							</span>
-							<div class="signs">
-								<button id="openPopup" style="border:0;margin: 0;background-color: white;">
-									<i class="ri-add-circle-line" style="font-size: 32px;color: green;"></i>
-								</button>
-								<div id="popupModal" class="modal">
-									<div class="modal-content">
-									<span class="close">&times;</span>
-									<h2>Enter Text</h2>
-									<input type="text" id="textInput" placeholder="Route Name">
-									<button class="dropdown-toggle" id="submitText">Submit</button>
-									</div>
-								</div>
-								<button id="openPopup" style="border:0;margin: 0;background-color: white;">
-									<i class='ri-subtract-line' style="font-size: 32px;color: red;"></i>
-								</button>
-							</div>
 						</div>
 					</div>
 				  </li>
-				<li>
-					<i class="bx bxs-group"></i>
-					<span class="text">
-						<h3>Passengers</h3>
-                        <div class="view_pass">
-                            <button class="pass_view_btn">View</button>
-                        </div>
-					</span>
-				</li>
+				  
 			</ul>
 
 
